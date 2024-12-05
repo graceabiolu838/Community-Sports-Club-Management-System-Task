@@ -1,8 +1,8 @@
 class Person:
     def __init__(self, name, age, contact):
-        self.name = "Grace"
-        self.age = 17
-        self.contact = 07954703510
+        self.name = name 
+        self.age = age 
+        self.contact = contact
     def set_details(self, name, age, contact):
         self.name = name
         self.age = age
@@ -51,9 +51,17 @@ class Coach(Person):
         return f"Coach: {self.name} is now mentoring {Member.name} in {Member.sport}\n"
     def get_mentees(self):
         x = {}
-        for i in range(len(self.mentees)):
-            x[self.mentees[i]] = {Member.sport}
-        return x
+        quit
+        while not quit:
+            name = input("Enter mentee name\n")
+            sport = input("Enter mentee sport\n")
+            x[name] = sport
+            quit = input("Is that all?\n")
+            if quit.lower()=="yes": break
+            else: continue 
+
+        return f"{x}"
+    
     def inc_pay(self, percent):
         #int(input("Number between 1 and 10- be wise\n"))
         self.pay*=(1+(percent*len(self.mentees))/100)
@@ -80,3 +88,9 @@ class Staff(Person):
             Staff ID: {self.staff_id}\n\
             Position: {self.pos}\n\
             Years of Service: {self.yrs}\n"
+    
+grace = Member("Grace", 17, 7266727190)
+flo = Coach()
+worker = Staff()
+
+
